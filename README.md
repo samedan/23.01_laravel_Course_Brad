@@ -1,3 +1,15 @@
+## This Git:
+
+https://github.com/samedan/23.01_laravel_Course_Brad
+
+## Course source
+
+https://www.youtube.com/watch?v=MYyJ4PuL4pY
+
+## Source Git :
+
+https://github.com/bradtraversy/laragigs
+
 ## MYSQL Cheat Sheet
 
 > https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3
