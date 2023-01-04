@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Listing extends Model
 {
     use HasFactory;
+
+    public function scopeFilter($query, array $filters) {        
+        // dd($filters['tag']);
+        if($filters['tag'] ?? false) {
+            // search into the 'tags' column of the 'listings' table of the DBB for the tag ('%' means before and after the word)
+            $query->where('tags', 'like', '%'.request('tag').'%');
+        }
+    }
 }
