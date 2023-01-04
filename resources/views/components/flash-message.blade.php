@@ -1,6 +1,12 @@
 {{-- // 'message' is the name given in ListingController --}}
 @if(session()->has('message'))
-  <div class="fixed top-0 transform bg-laravel text-white px-48 py-3 left-1/2 -translate-x-1/2">
+
+{{-- https://alpinejs.dev/  Show message for only 3 seconds ---}} 
+  <div 
+    x-data="{ show: true }"
+    x-init="setTimeout(()=> show=false, 3000)"
+    x-show="show"
+    class="fixed top-0 transform bg-laravel text-white px-48 py-3 left-1/2 -translate-x-1/2">
       <p>
         {{session('message')}}
       </p>
