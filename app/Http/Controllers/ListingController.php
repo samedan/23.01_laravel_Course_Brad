@@ -13,7 +13,7 @@ class ListingController extends Controller
         // dd(request()->tag);
         return view('listings.index', [
             // filter comes from /Models/Listing-> scopefilter
-            'listings' => Listing::latest()->filter(request(['tag']))->get()
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
         ]);
     }
     // Show Single listing
