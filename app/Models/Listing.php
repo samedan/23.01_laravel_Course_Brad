@@ -9,8 +9,11 @@ class Listing extends Model
 {
     use HasFactory;
 
+    // The fillable property is used inside the model. It takes care of defining which fields are to be considered when 
+    // the user will insert or update data. Only the fields marked as fillable are used in the mass assignment. This is 
+    // done to avoid mass assignment data attacks when the user sends data from the HTTP request
     protected $fillable = [
-        'title', 'company', 'location', 'website', 'email', 'description', 'tags'
+        'title', 'company', 'location', 'website', 'email', 'description', 'tags', 'logo'
     ];
 
     public function scopeFilter($query, array $filters) {        
