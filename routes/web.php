@@ -35,6 +35,9 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 // Update Listing
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
+// Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
 Route::get('/hello', function () {
     return response('<h1>Hello world</h1>')->header('Content-Type', 'text/plain');
 });
