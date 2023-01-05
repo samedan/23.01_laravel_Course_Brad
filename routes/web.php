@@ -29,7 +29,11 @@ Route::post('/listings', [ListingController::class, 'store']);
 // Single listing - Eloquent Models (check the route)
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
+// Show edit Form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 
+// Update Listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
 Route::get('/hello', function () {
     return response('<h1>Hello world</h1>')->header('Content-Type', 'text/plain');
