@@ -3,6 +3,7 @@
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
 
 // Common Resource Routes:
@@ -37,6 +38,13 @@ Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
 // Delete Listing
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
+// Show Register Form
+Route::get('/register', [UserController::class, 'create']);
+
+// Create New User
+Route::post('/users', [UserController::class, 'store']);
+
 
 Route::get('/hello', function () {
     return response('<h1>Hello world</h1>')->header('Content-Type', 'text/plain');
