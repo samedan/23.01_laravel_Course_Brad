@@ -13,7 +13,7 @@ class Listing extends Model
     // the user will insert or update data. Only the fields marked as fillable are used in the mass assignment. This is 
     // done to avoid mass assignment data attacks when the user sends data from the HTTP request
     protected $fillable = [
-        'title', 'company', 'location', 'website', 'email', 'description', 'tags', 'logo'
+        'title', 'company', 'location', 'website', 'email', 'description', 'tags', 'logo', 'user_id'
     ];
 
     public function scopeFilter($query, array $filters) {        
@@ -29,5 +29,10 @@ class Listing extends Model
                 ->orWhere('description', 'like', '%'.request('search').'%')
                 ->orWhere('tags', 'like', '%'.request('search').'%');
         }
+    }
+
+    // Relationship to User
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

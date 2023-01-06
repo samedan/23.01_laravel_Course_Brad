@@ -27,6 +27,9 @@ Route::get('/listings/create', [ListingController::class, 'create'])->middleware
 // Store Listing Data
 Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
 
+// Manage Listings
+Route::get('/listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // Single listing - Eloquent Models (check the route)
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -55,6 +58,9 @@ Route::get('/login', [UserController:: class, 'login'])->name('login')->middlewa
 
 // Log in User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
+
 
 Route::get('/hello', function () {
     return response('<h1>Hello world</h1>')->header('Content-Type', 'text/plain');
