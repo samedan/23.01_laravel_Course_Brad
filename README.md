@@ -19,6 +19,10 @@ https://github.com/bradtraversy/laragigs
 > write DBB
 > php artisan migrate:refresh --seed
 
+## Export Database
+
+> mysqldump --databases --user=root --password NAME_Of_DBB > Export_Dbb.sql
+
 ## Controller
 
 > php artisan make:controller ListingController
@@ -45,6 +49,16 @@ https://github.com/bradtraversy/laragigs
 ## Storage
 
 > /config/filesystems.php -> public
+
+## Fix Upload images
+
+> create file symlinkcreate.php in public_html folder
+>
+> <?php
+> symlink('/home/rart3629/laragigs.articole-smart.eu/storage/app/public', '/home/rart3629/laragigs.articole-smart.eu/public/storage');
+
+> run website/symlinkcreate.php
+> delete symlinkcreate.php
 
 ## Check DBB in Tinker
 
